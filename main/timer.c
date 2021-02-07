@@ -1,9 +1,9 @@
 #include "timer.h"
 
-static void callback_ISR_G0T0(void* arg){
+static void ISR_G0T0(void* arg){
 	TIMERG0.int_clr_timers.t0 = 1; //reset interrupt status
    	TIMERG0.hw_timer[0].config.alarm_en = 1; //reconfigure alarm
-	testing();
+	callback_ISR_G0T0();
 }
 
 /* static void ISR_G0T1 (void *arg){	
