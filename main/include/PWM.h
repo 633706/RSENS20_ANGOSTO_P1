@@ -7,5 +7,5 @@
 #define LEDC_HS_CH0_GPIO       (18)
 
 void PWM_init();
-
+void PWM_updateDuty (int duty);
 #endif

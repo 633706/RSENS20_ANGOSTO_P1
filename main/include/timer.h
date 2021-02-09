@@ -13,7 +13,9 @@
 #define TIMER_SCALE     (TIMER_BASE_CLK / TIMER_DIVIDER)
 
 static intr_handle_t s_timer_handle;
-void TIM_init (int timer_period_s);
+
+void TIM_init (int timer_period_ms);
+
 
 void callback_ISR_G0T0 (void);
 #endif

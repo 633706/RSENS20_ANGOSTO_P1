@@ -14,7 +14,7 @@ static void ISR_G1T1 (void *arg){
 } */
 
 //Función para inicializar todos los timers al inicio del programa.
-void TIM_init (int timer_period_s){
+void TIM_init (int timer_period_ms){
     timer_config_t config = {
             .alarm_en = TIMER_ALARM_EN,				//Alarm Enable
             .counter_en = TIMER_PAUSE,	//If the counter is enabled it will start incrementing / decrementing immediately after calling timer_init()
@@ -26,14 +26,10 @@ void TIM_init (int timer_period_s){
 
     timer_init(TIMER_GROUP_0, TIMER_0, &config);
     timer_set_counter_value(TIMER_GROUP_0, TIMER_0, 0);
-    timer_set_alarm_value(TIMER_GROUP_0, TIMER_0, timer_period_s * TIMER_SCALE);
+    timer_set_alarm_value(TIMER_GROUP_0, TIMER_0, (timer_period_ms/1000) * TIMER_SCALE);
     timer_enable_intr(TIMER_GROUP_0, TIMER_0);
     timer_isr_register(TIMER_GROUP_0, TIMER_0, &ISR_G0T0, NULL, 0, &s_timer_handle);
 
     timer_start(TIMER_GROUP_0, TIMER_0);
 
-
 }
-
-
-
