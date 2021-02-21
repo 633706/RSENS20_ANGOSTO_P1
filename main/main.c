@@ -13,7 +13,7 @@ void app_main(){
 		if(msgRxSize > 0){
 			UART_Receive(msgRx,msgRxSize);
 			UART_send((const char *)msgRx);
-			memset(msgRx,0,sizeof(msgRx))
+			memset(msgRx,0,sizeof(msgRx));
 		}
 	}
 }
