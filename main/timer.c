@@ -42,8 +42,11 @@ void TIM_init (int timer_period_ms){
     timer_start(TIMER_GROUP_0, TIMER_0);
 }
 
-void TIM_updateAlarm (int timer_period_ms){
+void TIM_updateAlarm (int timer_period_s){
 	timer_pause(TIMER_GROUP_0, TIMER_0);
-	    timer_set_alarm_value(TIMER_GROUP_0, TIMER_0, timer_period_ms*TIMER_SCALE/1000);
+    timer_set_alarm_value(TIMER_GROUP_0, TIMER_0, timer_period_s*TIMER_SCALE);
     timer_start(TIMER_GROUP_0, TIMER_0);
+}
+void TIM_stop(void){
+	timer_pause(TIMER_GROUP_0, TIMER_0);
 }

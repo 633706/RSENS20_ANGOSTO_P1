@@ -15,7 +15,8 @@
 static intr_handle_t s_timer_handle;
 
 void TIM_init (int timer_period_ms);
-void TIM_updateAlarm (int timer_period_ms);
+void TIM_updateAlarm (int timer_period_s);
+void TIM_stop (void);
 
 void callback_ISR_G0T0 (void);
 void callback_ISR_G0T1 (void);
