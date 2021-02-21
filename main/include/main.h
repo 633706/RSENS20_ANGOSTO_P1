@@ -10,7 +10,9 @@
 #include "UART.h"
 
 
-
+const char * msgTx = "Running\r\n";
+unsigned char msgRx[255] = {0};
+int msgRxSize = 0;
 
 
 #endif /* __MAIN_H__ */

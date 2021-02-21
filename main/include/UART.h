@@ -8,4 +8,6 @@
 
 void UART_init ();
 void UART_send (const char * txt);
+int UART_ReadyToReceive (void);
+void UART_Receive(unsigned char * txt, int size);
 #endif

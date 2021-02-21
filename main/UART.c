@@ -19,3 +19,13 @@ void UART_init (){
 void UART_send (const char * txt){
 	uart_write_bytes(UART_NUM_0,txt,strlen(txt));
 }
+
+int UART_ReadyToReceive (void){
+	int length = 0;
+	uart_get_buffered_data_len(UART_NUM_0, (size_t*)&length);
+	return length;
+}
+void UART_Receive(unsigned char * txt, int size){
+	uart_read_bytes(UART_NUM_0,txt,size,100);
+	uart_flush_input(UART_NUM_0);
+}
