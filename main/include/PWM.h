@@ -4,7 +4,7 @@
 #include "driver/ledc.h"
 #include "esp_err.h"
 
-#define LEDC_HS_CH0_GPIO       (18)
+#define LEDC_HS_CH0_GPIO       (12)
 
 void PWM_init();
 void PWM_updateDuty (int duty);

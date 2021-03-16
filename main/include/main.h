@@ -8,17 +8,25 @@
 #include "timer.h"
 #include "PWM.h"
 #include "UART.h"
+#include "I2C.h"
+#include "GPIO.h"
 
-char msgTx[255] = "Running\r\n";
-char msgTx_sample[255] = "Running\r\n";
+#include "MPU9250.h"
 
-unsigned char msgRx[255] = {0};
-int msgRxSize = 0;
+char msgTx_PC[255] = "Running\r\n";
 
-void DecodeMsgRx (unsigned char * txt);
-const char * ADCmsg = "ADC\r\n";
-const char * ADCref = "ADC";
-const char * PWMref = "PWM";
+int samples = 0;
+uint8_t WhoAmI_ = 0;
+int accX = 0;
+int accY = 0;
+int accZ = 0;
 
-int Reading = 0;
+int accX_[10] = {0};
+int accY_[10] = {0};
+int accZ_[10] = {0};
+
+int accX_mean = 0;
+int accY_mean = 0;
+int accZ_mean = 0;
+
 #endif /* __MAIN_H__ */
