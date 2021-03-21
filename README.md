@@ -21,8 +21,8 @@ Commit e439851, implementación comandos ADC, ADC(x) y PWM(x).
 ### Captura osciloscopio señal PWM.
 ![CapturaOsciloscopioLED](./documentation/Entregable2_señalPWM.png/)
 
-### Captura terminal con la información de acelereación.
-![CapturaTerminalCOM](./documentation/Entregable3_TerminalCOM.png/)
+### Captura terminal con diferentes comandos
+![CapturaTerminalCOM](./documentation/Entregable2_TerminalCOM.png/)
 
 [Entregable 2 video demostración](https://vimeo.com/526984683).
 
